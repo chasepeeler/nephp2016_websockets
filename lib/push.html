@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <script src="https://autobahn.s3.amazonaws.com/js/autobahn.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script>
+    var conn = new ab.connect('ws://localhost:12345',
+      function(session) {
+        session.subscribe("echos", printMessage);
+      },
+      function() {
+        console.warn('WebSocket connection closed');
+      },
+      {'skipSubprotocolCheck': true,
+       'maxRetries': 10,
+       'retryDelay': 100
+      }
+    );
+
+    var printMessage = function(topic, data) {
+      $('#output').text($('#output').text() + data + "\n");
+    };
+</script>
+</head>
+<body>
+  <textarea cols="40" rows="20" id="output"></textarea>
+</body>
+</html>
+

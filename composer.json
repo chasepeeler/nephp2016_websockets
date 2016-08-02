@@ -1,0 +1,11 @@
+{
+  "autoload": {
+    "psr-0": {
+      "EspSockets": "src"
+    }
+  },
+  "require": {
+    "cboden/ratchet": "v0.3.3",
+    "react/zmq": "v0.3.0"
+  }
+}

@@ -1,0 +1,4 @@
+Supervisor: http://supervisord.org/
+Winserv: http://www.sw4me.com/wiki/Winserv
+Ratchet: http://socketo.me/
+ZeroMQ: http://zeromq.org/
